@@ -193,25 +193,6 @@ The website is ready for analytics integration:
 - Facebook Pixel
 - Custom event tracking
 
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Test thoroughly
-5. Submit a pull request
-
-## 📄 License
-
-This project is licensed under the MIT License.
-
-## 🆘 Support
-
-For support or questions:
-- Email: hello@tielo.io
-- Phone: +1 (555) 123-4567
-- Website: [tielo.com](https://tielo.com)
-
 ## 🔄 Updates
 
 The website is designed to be easily maintainable:
