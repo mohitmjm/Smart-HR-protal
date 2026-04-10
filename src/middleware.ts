@@ -1,0 +1,75 @@
+import { clerkMiddleware, createRouteMatcher } from '@clerk/nextjs/server'
+import { NextResponse } from 'next/server'
+import type { NextRequest } from 'next/server'
+
+// Helper function to determine auth URL based on host
+function getAuthUrl(host: string): string {
+  const isPortalSubdomain = host === 'portal.tielo.io' || host.includes('portal.tielo')
+  return isPortalSubdomain ? '/auth' : '/portal/auth'
+}
+
+// Define protected routes that require authentication
+const isProtectedRoute = createRouteMatcher([
+  '/admin(.*)',
+  '/portal/dashboard(.*)',
+  '/portal/attendance(.*)',
+  '/portal/leaves(.*)',
+  '/portal/documents(.*)',
+  '/portal/profile(.*)',
+  '/portal/reports(.*)',
+  '/portal/settings(.*)',
+  '/portal/team(.*)',
+  '/portal/user(.*)',
+  '/portal/notifications(.*)',
+  // Subdomain protected routes (when accessed via portal.tielo.io)
+  '/dashboard(.*)',
+  '/attendance(.*)',
+  '/leaves(.*)',
+  '/documents(.*)',
+  '/profile(.*)',
+  '/reports(.*)',
+  '/settings(.*)',
+  '/team(.*)',
+  '/user(.*)',
+  '/admin(.*)',
+  '/notifications(.*)',
+  // Protected API routes
+  '/api/voice-commands(.*)',
+  '/api/attendance(.*)',
+  '/api/profile(.*)',
+  '/api/settings(.*)',
+])
+
+// Define public routes that don't require authentication
+const isPublicRoute = createRouteMatcher([
+  '/',
+  '/about',
+  '/services',
+  '/careers',
+  '/contact',
+  '/blogs(.*)',
+  '/case-studies',
+  '/pricing',
+  '/hr', // HR landing page
+  '/api/health', // Health check API
+  '/api/webhooks(.*)', // Webhook APIs
+  // Subdomain public routes (when accessed via portal.tielo.io)
+  '/auth(.*)', // Auth routes for subdomain
+  // Portal root on subdomain should be public (it handles redirects)
+  '/portal$', // This will match subdomain root only
+])
+
+export default clerkMiddleware((auth, req: NextRequest) => {
+  // Admin routes are protected at the API/page level via checkHRManagerAccess
+  // We don't add DB-dependent checks here to avoid Edge runtime issues
+  return NextResponse.next()
+})
+
+export const config = {
+  matcher: [
+    // Skip Next.js internals and all static files, unless found in search params
+    '/((?!_next|[^?]*\\.(?:html?|css|js(?!on)|jpe?g|webp|png|gif|svg|ttf|woff2?|ico|csv|docx?|xlsx?|zip|webmanifest)).*)',
+    // Always run for API routes
+    '/(api|trpc)(.*)',
+  ],
+}

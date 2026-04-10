@@ -1,0 +1,5 @@
+---
+description: Always look for existing components and global styling. Use the existing components and sylings. Maintain same styling across the project.
+globs:
+alwaysApply: true
+---

@@ -1,0 +1,5 @@
+---
+description: Dont work on backward compatibilities, This is a Development project.
+globs:
+alwaysApply: true
+---

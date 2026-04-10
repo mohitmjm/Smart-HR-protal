@@ -1,0 +1,53 @@
+import { NextRequest, NextResponse } from 'next/server'
+import connectDB from '@/lib/mongodb'
+import SystemSettings from '@/models/SystemSettings'
+
+/**
+ * Read-only public holidays endpoint
+ * Returns holiday dates from system settings (non-sensitive)
+ * Accepts optional query param `year` (single) or `years` (comma-separated)
+ */
+export async function GET(request: NextRequest) {
+  try {
+    await connectDB()
+
+    const { searchParams } = new URL(request.url)
+    const yearsParam = searchParams.get('years')
+    const yearParam = searchParams.get('year')
+
+    const years: number[] = []
+    if (yearsParam) {
+      yearsParam.split(',').forEach(y => {
+        const n = parseInt(y.trim(), 10)
+        if (!Number.isNaN(n)) years.push(n)
+      })
+    } else if (yearParam) {
+      const n = parseInt(yearParam, 10)
+      if (!Number.isNaN(n)) years.push(n)
+    } else {
+      const current = new Date().getFullYear()
+      years.push(current, current + 1)
+    }
+
+    let settings = await SystemSettings.findOne()
+    if (!settings) {
+      settings = new SystemSettings({ updatedBy: 'system' })
+      await settings.save()
+    }
+
+    const result: Record<string, Array<{ name: string; date: string }>> = {}
+    for (const y of years) {
+      const key = String(y)
+      const list = (settings.holidays?.get(key) as Array<{ name: string; date: string }>) || []
+      // Ensure output is plain array of objects
+      result[key] = list.map(h => ({ name: h.name, date: h.date }))
+    }
+
+    return NextResponse.json({ success: true, data: result })
+  } catch (error) {
+    console.error('Public holidays fetch error:', error)
+    return NextResponse.json({ success: false, error: 'Failed to fetch holidays' }, { status: 500 })
+  }
+}
+
+

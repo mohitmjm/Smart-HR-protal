@@ -1,0 +1,75 @@
+{
+  "functions": {
+    "src/app/api/**/*.ts": {
+      "maxDuration": 30
+    }
+  },
+  "regions": ["fra1"],
+  "framework": "nextjs",
+  "headers": [
+    {
+      "source": "/api/image/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=86400, s-maxage=86400, stale-while-revalidate=604800"
+        },
+        {
+          "key": "CDN-Cache-Control",
+          "value": "max-age=86400"
+        }
+      ]
+    },
+    {
+      "source": "/api/settings/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=300, s-maxage=300, stale-while-revalidate=600"
+        }
+      ]
+    },
+    {
+      "source": "/api/profile",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "private, max-age=60, stale-while-revalidate=300"
+        }
+      ]
+    },
+    {
+      "source": "/api/attendance",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "private, max-age=30, stale-while-revalidate=60"
+        }
+      ]
+    },
+    {
+      "source": "/api/leaves",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "private, max-age=60, stale-while-revalidate=300"
+        }
+      ]
+    },
+    {
+      "source": "/api/admin/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "private, max-age=120, stale-while-revalidate=300"
+        }
+      ]
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/api/cache/:path*",
+      "destination": "/api/cache/:path*"
+    }
+  ]
+}
