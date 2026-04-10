@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useEffect, useState } from 'react';
 import { useDevSafeAuth as useAuth } from '@/lib/hooks/useDevSafeClerk';;
@@ -33,7 +33,7 @@ export default function AdminAuthGuard({ children }: AdminAuthGuardProps) {
     if (!userId) {
       // Determine the correct auth URL based on the current host
       const isPortalSubdomain = typeof window !== 'undefined' && 
-        (window.location.hostname === 'portal.tielo.io' || window.location.hostname.includes('portal.tielo'))
+        (window.location.hostname === 'portal.inovatrix.io' || window.location.hostname.includes('portal.inovatrix'))
       const authUrl = isPortalSubdomain ? '/auth' : '/portal/auth'
       router.push(authUrl);
       return;
@@ -102,7 +102,7 @@ export default function AdminAuthGuard({ children }: AdminAuthGuardProps) {
               onClick={() => {
                 // Determine the correct dashboard URL based on the current host
                 const isPortalSubdomain = typeof window !== 'undefined' && 
-                  (window.location.hostname === 'portal.tielo.io' || window.location.hostname.includes('portal.tielo'))
+                  (window.location.hostname === 'portal.inovatrix.io' || window.location.hostname.includes('portal.inovatrix'))
                 const dashboardUrl = isPortalSubdomain ? '/dashboard' : '/portal/dashboard'
                 router.push(dashboardUrl)
               }}

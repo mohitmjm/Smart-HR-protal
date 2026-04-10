@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { auth } from '@clerk/nextjs/server';
+import { auth } from '@/lib/devAuthWrapper';
 import connectDB from '@/lib/mongodb';
 import UserProfile from '@/models/UserProfile';
 import mongoose from 'mongoose';

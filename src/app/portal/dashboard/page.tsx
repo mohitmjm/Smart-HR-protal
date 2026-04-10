@@ -50,18 +50,15 @@ export default function HRPortalDashboard() {
   const { user, isLoaded } = useDevSafeUser()
   const { profile } = useProfileSync()
   const { timezone, formatTime, getToday } = useTimezone()
-  const [currentTime, setCurrentTime] = useState(() => getToday())
-  const [greeting, setGreeting] = useState('')
+  const [currentTime, setCurrentTime] = useState<Date | null>(null)
+  const [greeting, setGreeting] = useState('Welcome')
 
   useEffect(() => {
-    // Update time every second
-    const timer = setInterval(() => {
+    const updateTime = () => {
       const now = getToday()
       setCurrentTime(now)
       
-      // Set personalized greeting based on time of day in user timezone
-      const userLocalTime = now
-      const hour = userLocalTime.getHours()
+      const hour = now.getHours()
       if (hour < 12) {
         setGreeting('Good Morning')
       } else if (hour < 17) {
@@ -69,7 +66,10 @@ export default function HRPortalDashboard() {
       } else {
         setGreeting('Good Evening')
       }
-    }, 1000)
+    }
+    
+    updateTime()
+    const timer = setInterval(updateTime, 1000)
 
     return () => clearInterval(timer)
   }, [getToday])
@@ -108,7 +108,6 @@ export default function HRPortalDashboard() {
       hoverGradient: 'from-orange-600 to-red-700'
     }
   ]
-
 
   if (!isLoaded) {
     return (
@@ -155,19 +154,11 @@ export default function HRPortalDashboard() {
               </h1>
             </div>
             <div className="text-right">
-              <div className="text-2xl font-bold text-gray-900">
-                {(() => {
-                  const today = getToday()
-                  const timeFormatted = formatTime(today, 'hh:mm a')
-                  return timeFormatted
-                })()}
+              <div className="text-2xl font-bold text-gray-900 min-h-[32px]">
+                {currentTime ? formatTime(currentTime, 'hh:mm a') : ''}
               </div>
-              <div className="text-gray-600">
-                {(() => {
-                  const today = getToday()
-                  const dateFormatted = formatTime(today, 'EEEE, MMMM d, yyyy')
-                  return dateFormatted
-                })()}
+              <div className="text-gray-600 min-h-[24px]">
+                {currentTime ? formatTime(currentTime, 'EEEE, MMMM d, yyyy') : ''}
               </div>
             </div>
           </div>

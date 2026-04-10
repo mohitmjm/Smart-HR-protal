@@ -1,4 +1,4 @@
-# LangGraph Agent Documentation
+﻿# LangGraph Agent Documentation
 
 ## Table of Contents
 
@@ -26,7 +26,7 @@
 
 ## System Overview
 
-The LangGraph Agent is a sophisticated voice command processing system built for the Tielo HR application. It transforms natural language input from users into structured actions that interact with HR systems like attendance tracking, leave management, and team oversight.
+The LangGraph Agent is a sophisticated voice command processing system built for the HR Dashboard application. It transforms natural language input from users into structured actions that interact with HR systems like attendance tracking, leave management, and team oversight.
 
 ### Purpose and Role
 
@@ -2822,7 +2822,7 @@ These diagrams illustrate the complete data flow through the LangGraph Agent sys
 
 ## Integration Points
 
-The LangGraph Agent integrates with multiple systems and services within the Tielo HR application ecosystem. This section details all integration points and how they work together.
+The LangGraph Agent integrates with multiple systems and services within the HR Dashboard application ecosystem. This section details all integration points and how they work together.
 
 ### API Integration
 
@@ -4968,4 +4968,4 @@ This troubleshooting guide provides comprehensive debugging strategies and error
 
 ---
 
-*Documentation generated for the Tielo HR LangGraph Agent System*
+*Documentation generated for the HR Dashboard LangGraph Agent System*

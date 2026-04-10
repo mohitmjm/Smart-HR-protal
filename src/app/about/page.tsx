@@ -1,4 +1,4 @@
-import Link from 'next/link'
+﻿import Link from 'next/link'
 import { 
   UsersIcon, 
   TagIcon, 
@@ -57,7 +57,7 @@ export default function About() {
           <div className="text-center">
             <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6 animate-fade-in">
               About{' '}
-              <span className="text-blue-600">tielo</span>
+              <span className="text-blue-600">HR Dashboard</span>
             </h1>
             
             <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-4xl mx-auto animate-fade-in-delay-1">
@@ -76,13 +76,13 @@ export default function About() {
                 Our Story
               </h2>
               <p className="text-lg text-gray-600 mb-6">
-                tielo was born from frustration. Our founder, Alex, was running his third startup and kept hitting the same wall: great ideas, limited resources, and the constant struggle to find the right people at the right time.
+                HR Dashboard was born from frustration. Our founder, Alex, was running his third startup and kept hitting the same wall: great ideas, limited resources, and the constant struggle to find the right people at the right time.
               </p>
               <p className="text-lg text-gray-600 mb-6">
                 Traditional agencies were expensive and slow. Freelancers were hit-or-miss. Full-time hires were a huge commitment when you weren&apos;t sure what you&apos;d need next month.
               </p>
               <p className="text-lg text-gray-600">
-                So we built tielo: a flexible, AI-powered team that scales with your needs. No long-term contracts, no overhead, just the right people at the right time.
+                So we built HR Dashboard: a flexible, AI-powered team that scales with your needs. No long-term contracts, no overhead, just the right people at the right time.
               </p>
             </div>
             <div className="bg-blue-50 p-8 rounded-2xl">

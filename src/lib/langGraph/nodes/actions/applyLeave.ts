@@ -1,4 +1,4 @@
-// Apply Leave Action: Handles leave application submissions
+﻿// Apply Leave Action: Handles leave application submissions
 
 import { logger } from "../../utils/logger";
 import connectDB from "../../../mongodb";
@@ -283,7 +283,7 @@ export async function executeApplyLeave(params: ApplyLeaveParams): Promise<Apply
                    </ul>
                    <p><strong>Reason:</strong></p>
                    <blockquote>${leave.reason?.toString().replace(/\n/g, '<br/>') || '-'}</blockquote>
-                   <p>Regards,<br/>Tielo HR</p>`,
+                   <p>Regards,<br/>HR Dashboard</p>`,
             text: `Leave Request from ${userProfile.firstName} ${userProfile.lastName}\nType: ${leave.leaveType}\nFrom: ${new Date(leave.startDate).toLocaleDateString()}\nTo: ${new Date(leave.endDate).toLocaleDateString()}\nTotal Days: ${leave.totalDays}\nReason: ${leave.reason || '-'}`,
             replyTo: employeeEmail,
           });
@@ -301,7 +301,7 @@ export async function executeApplyLeave(params: ApplyLeaveParams): Promise<Apply
                      <li><strong>To:</strong> ${new Date(leave.endDate).toLocaleDateString()}</li>
                      <li><strong>Total Days:</strong> ${leave.totalDays}</li>
                    </ul>
-                   <p>Regards,<br/>Tielo HR</p>`,
+                   <p>Regards,<br/>HR Dashboard</p>`,
           });
         }
       }

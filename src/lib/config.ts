@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Environment Configuration
  * Centralized configuration for different environments
  */
@@ -37,11 +37,11 @@ const configs: Record<AppConfig['environment'], AppConfig> = {
   },
   staging: {
     api: {
-      baseUrl: 'https://staging-api.tielo.io',
+      baseUrl: 'https://api.portal.inovatrix.io',
       cors: {
         allowedOrigins: [
-          'https://staging.hr.tielo.io',
-          'https://staging.tielo.io',
+          'https://staging.portal.inovatrix.io',
+          'https://staging.portal.inovatrix.io',
         ],
         allowedMethods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
         allowedHeaders: [
@@ -58,15 +58,15 @@ const configs: Record<AppConfig['environment'], AppConfig> = {
   },
   production: {
     api: {
-      baseUrl: 'https://api.tielo.io',
+      baseUrl: 'https://api.portal.inovatrix.io',
       cors: {
         allowedOrigins: [
-          'https://hr.tielo.io',
-          'https://www.hr.tielo.io',
-          'https://portal.tielo.io',
-          'https://www.portal.tielo.io',
-          'https://tielo.io',
-          'https://www.tielo.io',
+          'https://portal.inovatrix.io',
+          'https://www.portal.inovatrix.io',
+          'https://portal.inovatrix.io',
+          'https://portal.inovatrix.io',
+          'https://portal.inovatrix.io',
+          'https://portal.inovatrix.io',
           // Add Vercel preview URLs for testing
           /^https:\/\/.*\.vercel\.app$/,
           /^https:\/\/.*\.vercel\.dev$/,

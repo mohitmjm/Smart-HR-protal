@@ -1,4 +1,4 @@
-# Implementation Plan
+﻿# Implementation Plan
 
 - [x] 1. Create documentation file structure and initial setup
   - Create the main documentation file at `docs/langgraph-agent-documentation.md`
@@ -71,7 +71,7 @@
   - _Requirements: 1.2, 1.5_
 
 - [x] 10. Document integration points and extension patterns
-  - Document how the LangGraph system integrates with the broader Tielo HR application
+  - Document how the LangGraph system integrates with the broader HR Dashboard application
   - Explain API endpoints that trigger the LangGraph processing
   - Document database integration patterns used by action executors
   - Document service integration patterns (email, notifications, etc.)

@@ -103,7 +103,7 @@ export default function EditJobPage() {
         benefits: job.benefits,
         salary: job.salary,
         tags: job.tags || [],
-        company: companyName || 'Tielo',
+        company: companyName || 'HR Dashboard',
         contactEmail: job.contactEmail,
         postedDate: job.postedDate ? new Date(job.postedDate).toISOString() : undefined,
         deadline: job.deadline ? new Date(job.deadline).toISOString() : undefined,

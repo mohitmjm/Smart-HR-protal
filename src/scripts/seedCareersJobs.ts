@@ -9,7 +9,7 @@ async function main() {
 
     const Job = await getCareersJobModel();
 
-    const postedDate = new Date('2025-11-08');
+    const postedDate = new Date('2026-03-02');
 
     const jobs = [
       {
@@ -62,8 +62,8 @@ async function main() {
           'Content Creation',
           'Entry-level'
         ],
-        company: 'Tielo',
-        contactEmail: 'careers@tielo.io',
+        company: 'HR Dashboard',
+        contactEmail: 'careers@portal.inovatrix.io',
         postedDate
       },
       {
@@ -116,8 +116,8 @@ async function main() {
           'UI/UX',
           'Entry-level'
         ],
-        company: 'Tielo',
-        contactEmail: 'careers@tielo.io',
+        company: 'HR Dashboard',
+        contactEmail: 'careers@portal.inovatrix.io',
         postedDate
       },
       {
@@ -168,8 +168,8 @@ async function main() {
           'B2B',
           'Entry-level'
         ],
-        company: 'Tielo',
-        contactEmail: 'careers@tielo.io',
+        company: 'HR Dashboard',
+        contactEmail: 'careers@portal.inovatrix.io',
         postedDate
       },
       {
@@ -221,8 +221,8 @@ async function main() {
           'API',
           'Entry-level'
         ],
-        company: 'Tielo',
-        contactEmail: 'careers@tielo.io',
+        company: 'HR Dashboard',
+        contactEmail: 'careers@portal.inovatrix.io',
         postedDate
       },
       {
@@ -257,10 +257,10 @@ async function main() {
         salary: { min: 1200000, max: 1800000, currency: 'INR' },
         isActive: true,
         tags: ['Design', 'Figma', 'UX', 'UI', 'Design System'],
-        company: 'Tielo',
-        contactEmail: 'careers@tielo.io',
+        company: 'HR Dashboard',
+        contactEmail: 'careers@portal.inovatrix.io',
         postedDate,
-        deadline: new Date('2026-01-15')
+        deadline: new Date('2026-04-15')
       },
       {
         title: 'Senior Backend Engineer',
@@ -294,10 +294,10 @@ async function main() {
         salary: { min: 3000000, max: 4500000, currency: 'INR' },
         isActive: true,
         tags: ['Node.js', 'TypeScript', 'MongoDB', 'Microservices', 'AWS'],
-        company: 'Tielo',
-        contactEmail: 'careers@tielo.io',
+        company: 'HR Dashboard',
+        contactEmail: 'careers@portal.inovatrix.io',
         postedDate,
-        deadline: new Date('2025-12-31')
+        deadline: new Date('2026-04-30')
       },
       {
         title: 'Data Analyst',
@@ -331,10 +331,10 @@ async function main() {
         salary: { min: 1200000, max: 1800000, currency: 'INR' },
         isActive: true,
         tags: ['SQL', 'Analytics', 'Dashboards', 'A/B Testing', 'Python'],
-        company: 'Tielo',
-        contactEmail: 'careers@tielo.io',
+        company: 'HR Dashboard',
+        contactEmail: 'careers@portal.inovatrix.io',
         postedDate,
-        deadline: new Date('2026-02-15')
+        deadline: new Date('2026-05-15')
       },
       {
         title: 'DevOps Engineer',
@@ -368,10 +368,10 @@ async function main() {
         salary: { min: 2000000, max: 3000000, currency: 'INR' },
         isActive: true,
         tags: ['DevOps', 'Kubernetes', 'Terraform', 'AWS', 'CI/CD'],
-        company: 'Tielo',
-        contactEmail: 'careers@tielo.io',
+        company: 'HR Dashboard',
+        contactEmail: 'careers@portal.inovatrix.io',
         postedDate,
-        deadline: new Date('2026-01-31')
+        deadline: new Date('2026-04-30')
       },
       {
         title: 'HR Operations Associate',
@@ -405,10 +405,10 @@ async function main() {
         salary: { min: 600000, max: 900000, currency: 'INR' },
         isActive: true,
         tags: ['HR', 'Operations', 'Onboarding', 'HRIS', 'People'],
-        company: 'Tielo',
-        contactEmail: 'careers@tielo.io',
+        company: 'HR Dashboard',
+        contactEmail: 'careers@portal.inovatrix.io',
         postedDate,
-        deadline: new Date('2026-03-01')
+        deadline: new Date('2026-05-01')
       },
       {
         title: 'Customer Success Manager',
@@ -417,7 +417,7 @@ async function main() {
         type: 'full-time' as const,
         experience: 'mid' as const,
         description:
-          'Drive adoption, retention, and growth by building trusted relationships with our customers. You will be the voice of the customer across Tielo.',
+          'Drive adoption, retention, and growth by building trusted relationships with our customers. You will be the voice of the customer across HR Dashboard.',
         requirements: [
           '3+ years in customer success or account management',
           'Excellent communication and stakeholder management',
@@ -442,10 +442,10 @@ async function main() {
         salary: { min: 1200000, max: 1800000, currency: 'INR' },
         isActive: true,
         tags: ['Customer Success', 'Retention', 'CRM', 'SaaS', 'Onboarding'],
-        company: 'Tielo',
-        contactEmail: 'careers@tielo.io',
+        company: 'HR Dashboard',
+        contactEmail: 'careers@portal.inovatrix.io',
         postedDate,
-        deadline: new Date('2026-02-01')
+        deadline: new Date('2026-04-01')
       }
     ];
 

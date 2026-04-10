@@ -47,7 +47,7 @@ export async function GET(request: NextRequest) {
     const systemSettings = await SystemSettings.findOne();
     const availableLeaveTypes = systemSettings?.leave?.defaultLeaveTypes || [
       'Annual Leave',
-      'Sick Leave', 
+      'Sick Leave',
       'Personal Leave',
       'Maternity Leave',
       'Paternity Leave'
@@ -65,14 +65,14 @@ export async function GET(request: NextRequest) {
     // Build leave balance data using stored balance directly
     const leaveBalanceData = availableLeaveTypes.map((leaveType: string) => {
       const dbField = leaveTypeMapping[leaveType] || leaveType.toLowerCase();
-      
+
       // Get current remaining balance from stored data
       const remainingDays = (profile.leaveBalance as Record<string, unknown>)?.[dbField] as number || 0;
-      
+
       // Get allocated days (if available, otherwise use remaining as total)
       const allotedField = `${dbField}_alloted`;
       const allocatedDays = (profile.leaveBalance as Record<string, unknown>)?.[allotedField] as number || remainingDays;
-      
+
       // Calculate taken days as: allocated - remaining
       const takenDays = Math.max(0, allocatedDays - remainingDays);
 

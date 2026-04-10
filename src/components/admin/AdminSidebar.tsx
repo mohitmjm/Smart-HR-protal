@@ -23,27 +23,27 @@ import {
 const navigation = [
   {
     name: 'Dashboard',
-    href: '/admin',
+    href: '/portal/admin',
     icon: <HomeIcon className="w-5 h-5" />
   },
   {
     name: 'User Management',
-    href: '/admin/users',
+    href: '/portal/admin/users',
     icon: <UsersIcon className="w-5 h-5" />
   },
   {
     name: 'Leave Management',
-    href: '/admin/leaves',
+    href: '/portal/admin/leaves',
     icon: <CalendarIcon className="w-5 h-5" />
   },
   {
     name: 'Attendance',
-    href: '/admin/attendance',
+    href: '/portal/admin/attendance',
     icon: <ClockIcon className="w-5 h-5" />
   },
   {
     name: 'Team Management',
-    href: '/admin/teams',
+    href: '/portal/admin/teams',
     icon: <UserGroupIcon className="w-5 h-5" />
   },
   {
@@ -53,12 +53,12 @@ const navigation = [
   },
   {
     name: 'Analytics',
-    href: '/admin/analytics',
+    href: '/portal/admin/analytics',
     icon: <ChartBarIcon className="w-5 h-5" />
   },
   {
     name: 'Settings',
-    href: '/admin/settings',
+    href: '/portal/admin/settings',
     icon: <Cog6ToothIcon className="w-5 h-5" />
   },
 ];
@@ -159,7 +159,9 @@ export default function AdminSidebar({ isCollapsed, onToggle, onHoverChange }: A
         {/* Navigation */}
         <nav className="flex-1 px-4 py-4 space-y-1 overflow-y-auto">
           {navigation.map((item) => {
-            const isActive = pathname === item.href;
+            const isActive = item.href === '/portal/admin'
+              ? pathname === '/portal/admin'
+              : pathname.startsWith(item.href);
             const shouldShowDetails = !isCollapsed || isHovered;
             return (
               <Link
@@ -270,7 +272,9 @@ export default function AdminSidebar({ isCollapsed, onToggle, onHoverChange }: A
               {/* Mobile Navigation */}
               <nav className="flex-1 px-4 py-4 space-y-1 overflow-y-auto">
                 {navigation.map((item) => {
-                  const isActive = pathname === item.href;
+                  const isActive = item.href === '/portal/admin'
+                    ? pathname === '/portal/admin'
+                    : pathname.startsWith(item.href);
                   return (
                     <Link
                       key={item.name}

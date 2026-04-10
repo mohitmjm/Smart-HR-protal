@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 
 import Link from 'next/link'
 import { useState } from 'react'
@@ -38,17 +38,17 @@ export default function Contact() {
   const serviceContacts = [
     {
       service: 'Product Development',
-      contact: 'dev@tielo.io',
+      contact: 'dev@portal.inovatrix.io',
       responseTime: 'Within 2 hours'
     },
     {
       service: 'Go-to-Market & Growth',
-      contact: 'gtm@tielo.io',
+      contact: 'gtm@portal.inovatrix.io',
       responseTime: 'Within 4 hours'
     },
     {
       service: 'People & Operations',
-      contact: 'hr@tielo.io',
+      contact: 'hr@portal.inovatrix.io',
       responseTime: 'Within 6 hours'
     }
   ]
@@ -121,7 +121,7 @@ export default function Contact() {
       answer: 'Yes! We work with startups globally and have experience with different time zones, cultures, and business practices.'
     },
     {
-      question: 'What makes tielo different from traditional agencies?',
+      question: 'What makes HR Dashboard different from traditional agencies?',
       answer: 'We combine AI-powered efficiency with flexible team scaling, no long-term contracts, and startup-focused expertise. We\'re built for speed and flexibility.'
     }
   ]
@@ -469,7 +469,7 @@ export default function Contact() {
               Frequently Asked Questions
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Quick answers to common questions about working with tielo.
+              Quick answers to common questions about working with HR Dashboard.
             </p>
           </div>
           
@@ -507,10 +507,10 @@ export default function Contact() {
           
           <div className="grid md:grid-cols-4 gap-8">
             {[
-              { platform: 'LinkedIn', handle: '@tielo', description: 'Professional updates and insights' },
-              { platform: 'Twitter', handle: '@tielo', description: 'Real-time news and tips' },
-              { platform: 'Instagram', handle: '@tielo', description: 'Behind-the-scenes and culture' },
-              { platform: 'YouTube', handle: 'tielo', description: 'Educational content and webinars' }
+              { platform: 'LinkedIn', handle: '@HR Dashboard', description: 'Professional updates and insights' },
+              { platform: 'Twitter', handle: '@HR Dashboard', description: 'Real-time news and tips' },
+              { platform: 'Instagram', handle: '@HR Dashboard', description: 'Behind-the-scenes and culture' },
+              { platform: 'YouTube', handle: 'HR Dashboard', description: 'Educational content and webinars' }
             ].map((social) => (
               <div
                 key={social.platform}

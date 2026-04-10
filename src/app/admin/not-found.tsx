@@ -1,4 +1,4 @@
-import Link from 'next/link';
+﻿import Link from 'next/link';
 
 export default function AdminNotFound() {
   return (
@@ -18,7 +18,7 @@ export default function AdminNotFound() {
         
         <div className="space-y-4">
           <Link
-            href="https://portal.tielo.io/admin"
+            href="https://portal.inovatrix.io/admin"
             className="inline-flex items-center justify-center w-full bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors"
           >
             <svg className="mr-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">

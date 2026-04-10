@@ -1,4 +1,4 @@
-import Link from 'next/link'
+﻿import Link from 'next/link'
 import { 
   RocketLaunchIcon, 
   UsersIcon, 
@@ -28,7 +28,7 @@ export default function Home() {
     {
       icon: CpuChipIcon,
       title: 'AI at the Core',
-      description: 'Every tielo service is AI-enabled: HR, Sales, Marketing, and Development — all powered by cutting-edge artificial intelligence.'
+      description: 'Every HR Dashboard service is AI-enabled: HR, Sales, Marketing, and Development — all powered by cutting-edge artificial intelligence.'
     }
   ]
 
@@ -59,7 +59,7 @@ export default function Home() {
 
   const testimonials = [
     {
-      quote: "tielo helped us launch our MVP in 3 weeks when we were down to our last runway. Their AI-powered approach saved us months of development time.",
+      quote: "HR Dashboard helped us launch our MVP in 3 weeks when we were down to our last runway. Their AI-powered approach saved us months of development time.",
       author: "Sarah Chen",
       role: "Founder, TechFlow"
     },
@@ -79,7 +79,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6 animate-fade-in">
-              tielo —{' '}
+              HR Dashboard —{' '}
               <span className="text-blue-600">Rooted Support</span>
               <br />
               for Startup Growth
@@ -116,18 +116,18 @@ export default function Home() {
               What We Do
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              At tielo, we serve startups and small teams who need to move fast without burning out. We cover everything from product development to sales, marketing, and HR — so your core team can focus on vision, not busywork.
+              At HR Dashboard, we serve startups and small teams who need to move fast without burning out. We cover everything from product development to sales, marketing, and HR — so your core team can focus on vision, not busywork.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Why Choose tielo Section */}
+      {/* Why Choose HR Dashboard Section */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-              Why Choose tielo
+              Why Choose HR Dashboard
             </h2>
           </div>
           
@@ -240,7 +240,7 @@ export default function Home() {
             The Name
           </h2>
           <p className="text-xl text-gray-600 mb-6">
-            <span className="font-semibold text-blue-600">tielo</span> — from &quot;tied&quot; and &quot;low.&quot;
+            <span className="font-semibold text-blue-600">HR Dashboard</span> — from &quot;tied&quot; and &quot;low.&quot;
           </p>
           <p className="text-lg text-gray-600">
             Our work is rooted at the foundation of your business, not just at the surface. We handle the groundwork so your vision can rise.

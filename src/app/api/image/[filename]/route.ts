@@ -67,12 +67,10 @@ function validateOrigin(request: NextRequest): boolean {
   
   const allowedDomains = [
     'localhost:3000',
-    'tielo.io',
-    'www.tielo.io',
-    'portal.tielo.io',
-    'www.portal.tielo.io',
-    'hr.tielo.io',
-    'www.hr.tielo.io',
+    'portal.inovatrix.io',
+    'www.portal.inovatrix.io',
+    'inovatrix.io',
+    'www.inovatrix.io',
     '.vercel.app',
     '.vercel.dev'
   ]

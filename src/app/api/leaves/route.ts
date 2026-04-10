@@ -1,4 +1,4 @@
-export const dynamic = 'force-dynamic'
+﻿export const dynamic = 'force-dynamic'
 
 import { NextRequest, NextResponse } from 'next/server';
 import connectDB from '../../../lib/mongodb';
@@ -230,9 +230,9 @@ export async function POST(request: NextRequest) {
                         <p><strong>Reason:</strong></p>
                         <blockquote>${leave.reason?.toString().replace(/\n/g, '<br/>') || '-'}</blockquote>
                         <p style="margin-top: 20px;">
-                          <a href="https://portal.tielo.io/leaves" style="background-color: #007bff; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; display: inline-block;">View Leave Requests</a>
+                          <a href="https://portal.inovatrix.io/leaves" style="background-color: #007bff; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; display: inline-block;">View Leave Requests</a>
                         </p>
-                        <p>Regards,<br/>Tielo HR</p>`;
+                        <p>Regards,<br/>HR Dashboard</p>`;
 
           // Some providers ignore cc unless using headers; SendGrid supports cc via personalizations
           // Our helper does not expose cc; use simple send to manager and add employee in replyTo for visibility
@@ -263,9 +263,9 @@ export async function POST(request: NextRequest) {
                    <p><strong>Reason:</strong></p>
                    <blockquote>${leave.reason?.toString().replace(/\n/g, '<br/>') || '-'}</blockquote>
                    <p style="margin-top: 20px;">
-                     <a href="https://portal.tielo.io/leaves" style="background-color: #007bff; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; display: inline-block;">View My Leaves</a>
+                     <a href="https://portal.inovatrix.io/leaves" style="background-color: #007bff; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; display: inline-block;">View My Leaves</a>
                    </p>
-                   <p>Regards,<br/>Tielo HR</p>`,
+                   <p>Regards,<br/>HR Dashboard</p>`,
           });
         } else {
           console.warn('[Leaves:POST] Missing manager or employee email. Skipping emails.');

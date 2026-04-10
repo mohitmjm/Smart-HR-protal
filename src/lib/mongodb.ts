@@ -206,6 +206,8 @@ export async function connectCareersDB(): Promise<Connection> {
     }
 
     if (!careersCached!.promise) {
+      const activeUri = global.__MONGO_MEM_URI__ || MONGODB_URI;
+      
       const opts = {
         bufferCommands: false,
         dbName: 'careers',
@@ -215,10 +217,10 @@ export async function connectCareersDB(): Promise<Connection> {
         family: 4,
         retryWrites: true,
         w: 'majority',
-        ssl: true
+        ssl: activeUri?.includes('mongodb+srv') || activeUri?.includes('ac-') ? true : false
       } as const;
       
-      const connection = mongoose.createConnection(MONGODB_URI!, opts);
+      const connection = mongoose.createConnection(activeUri!, opts);
       careersCached!.promise = connection.asPromise();
     }
 

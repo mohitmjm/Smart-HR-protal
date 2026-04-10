@@ -1,4 +1,4 @@
-import { NextRequest, NextResponse } from 'next/server'
+﻿import { NextRequest, NextResponse } from 'next/server'
 import { checkHRManagerAccess } from '@/lib/adminAuth'
 import { getCareersJobModel } from '@/models/careers/Job'
 import { jobCreateSchema } from '@/lib/validation/job'
@@ -76,10 +76,10 @@ export async function POST(req: NextRequest) {
     if (!companyName) {
       try {
         const companyInfo = await SettingsService.getCompanyInfo()
-        companyName = companyInfo.name || 'Tielo'
+        companyName = companyInfo.name || 'HR Dashboard'
       } catch (err) {
         console.error('Failed to fetch company name from settings:', err)
-        companyName = 'Tielo'
+        companyName = 'HR Dashboard'
       }
     }
 

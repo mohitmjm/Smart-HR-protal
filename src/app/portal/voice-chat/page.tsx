@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 
 import { useState } from 'react'
 import VoiceCommandChat from '@/components/VoiceCommandChat'
@@ -13,7 +13,7 @@ export default function VoiceChatPage() {
           <div className="flex items-center justify-between mb-8">
             <div>
               <h1 className="text-3xl font-bold text-gray-900">Voice Command Chat</h1>
-              <p className="text-gray-600 mt-2">Recent voice interactions with Tielo</p>
+              <p className="text-gray-600 mt-2">Recent voice interactions with HR Dashboard</p>
             </div>
             <button
               onClick={() => setShowChat(!showChat)}
@@ -40,9 +40,9 @@ export default function VoiceChatPage() {
                     </p>
                   </div>
                   <div>
-                    <h4 className="font-medium text-gray-700 mb-2">Tielo Responses (Right)</h4>
+                    <h4 className="font-medium text-gray-700 mb-2">HR Dashboard Responses (Right)</h4>
                     <p className="text-sm text-gray-600">
-                      Tielo's responses show the action taken, status, and confirmation message.
+                      HR Dashboard's responses show the action taken, status, and confirmation message.
                     </p>
                   </div>
                 </div>

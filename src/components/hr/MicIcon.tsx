@@ -22,6 +22,7 @@ import { isGeolocationAvailable, getLocationWithAddress } from '@/lib/geolocatio
 import VoiceCommandChatSimple from '../VoiceCommandChatSimple'
 
 const MicIcon = () => {
+  const [mounted, setMounted] = useState(false)
   const [isPressed, setIsPressed] = useState(false)
   const [showChat, setShowChat] = useState(false)
   const [chatRefreshTrigger, setChatRefreshTrigger] = useState(0)
@@ -46,6 +47,7 @@ const MicIcon = () => {
   const router = useRouter()
 
   useEffect(() => {
+    setMounted(true)
     // Initialize services only on client side
     if (typeof window !== 'undefined') {
       try {
@@ -501,6 +503,8 @@ const MicIcon = () => {
     navigator.mediaDevices && 
     typeof navigator.mediaDevices.getUserMedia === 'function' && 
     typeof MediaRecorder !== 'undefined'
+
+  if (!mounted) return null;
 
   if (!isVoiceSupported) {
     return (

@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { auth } from '@clerk/nextjs/server';
+import { auth } from '@/lib/devAuthWrapper';
 import connectDB from '@/lib/mongodb';
 import SystemSettings from '@/models/SystemSettings';
 import { DEV_BYPASS_ENABLED, DEV_USER } from '@/lib/devAuth';

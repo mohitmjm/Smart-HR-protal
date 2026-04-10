@@ -1,6 +1,6 @@
-## The website have one main domain and one subdomain. 
+﻿## The website have one main domain and one subdomain. 
 
-### domain: tielo.io
+### domain: portal.inovatrix.io
 
 This is the primary website used for promotion and job application.
 
@@ -10,27 +10,27 @@ Clerk based authentication is not neccassary.
 
 The hr page should also come like this
 
-tielo.io/hr
+portal.inovatrix.io/hr
 
-### subdomain: portal.tielo.io
+### subdomain: portal.inovatrix.io
 
 This is a HR portal.
 
-If user comes on the portal.tielo.io they should go to portal.tielo.io/auth for login/signup
+If user comes on the portal.inovatrix.io they should go to portal.inovatrix.io/auth for login/signup
 
 the pages under this subdomain should come from this 
 
-portal.tielo.io/attendance
-portal.tielo.io/settings
+portal.inovatrix.io/attendance
+portal.inovatrix.io/settings
 
 
-### The Admin page is part of the portal.tielo.io so it can be accessed from portal.tielo.io/admin
+### The Admin page is part of the portal.inovatrix.io so it can be accessed from portal.inovatrix.io/admin
 
-the admin pages can be accessed by portal.tielo.io/admin/settings. 
+the admin pages can be accessed by portal.inovatrix.io/admin/settings. 
 
 ## The intended structure is like this.
 
 In production:
 
-tielo.io → Main website (marketing, careers, job applications)
-portal.tielo.io → HR portal (authentication required)
+portal.inovatrix.io → Main website (marketing, careers, job applications)
+portal.inovatrix.io → HR portal (authentication required)

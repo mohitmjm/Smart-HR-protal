@@ -13,7 +13,7 @@ export async function POST(req: NextRequest) {
     // Authenticate user
     let authenticatedUser;
     try {
-      const { auth, currentUser } = await import('@clerk/nextjs/server');
+      const { auth, currentUser } = await import('@/lib/devAuthWrapper');
       const { userId } = await auth();
       
       if (!userId) {

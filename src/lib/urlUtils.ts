@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Utility functions for handling URLs and routing
  */
 
@@ -24,7 +24,7 @@ export function getPortalUrl(path: string = ''): string {
     const hostname = window.location.hostname
     
     // Check if we're on the portal subdomain
-    if (hostname === 'portal.tielo.io' || hostname.includes('portal.tielo')) {
+    if (hostname === 'portal.inovatrix.io' || hostname.includes('portal.inovatrix')) {
       // Portal subdomain: use relative path
       return path.startsWith('/') ? path : `/${path}`
     } else {
@@ -45,7 +45,7 @@ export function getAuthUrl(path: string = ''): string {
     const hostname = window.location.hostname
     
     // Check if we're on the portal subdomain
-    if (hostname === 'portal.tielo.io' || hostname.includes('portal.tielo')) {
+    if (hostname === 'portal.inovatrix.io' || hostname.includes('portal.inovatrix')) {
       // Portal subdomain: use relative auth path
       return `/auth${path.startsWith('/') ? path : `/${path}`}`
     } else {
@@ -64,8 +64,8 @@ export function getAuthUrl(path: string = ''): string {
 export function isSubdomain(): boolean {
   if (typeof window !== 'undefined') {
     const hostname = window.location.hostname
-    return hostname === 'portal.tielo.io' || 
-           hostname.includes('portal.tielo')
+    return hostname === 'portal.inovatrix.io' || 
+           hostname.includes('portal.inovatrix')
   }
   return false
 }
@@ -76,7 +76,7 @@ export function isSubdomain(): boolean {
 export function isPortalSubdomain(): boolean {
   if (typeof window !== 'undefined') {
     const hostname = window.location.hostname
-    return hostname === 'portal.tielo.io' || hostname.includes('portal.tielo')
+    return hostname === 'portal.inovatrix.io' || hostname.includes('portal.inovatrix')
   }
   return false
 }
@@ -88,7 +88,7 @@ export function getSubdomainType(): 'portal' | 'main' {
   if (typeof window !== 'undefined') {
     const hostname = window.location.hostname
     
-    if (hostname === 'portal.tielo.io' || hostname.includes('portal.tielo')) {
+    if (hostname === 'portal.inovatrix.io' || hostname.includes('portal.inovatrix')) {
       return 'portal'
     }
   }
@@ -106,7 +106,7 @@ export function getHRPortalPath(path: string = ''): string {
     return `/portal${path ? `/${path}` : ''}`
   }
   
-  const isPortalSubdomain = window.location.hostname === 'portal.tielo.io'
+  const isPortalSubdomain = window.location.hostname === 'portal.inovatrix.io'
   if (isPortalSubdomain) {
     return path ? `/${path}` : '/dashboard'
   }

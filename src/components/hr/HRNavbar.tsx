@@ -48,7 +48,7 @@ const HRNavbar = ({ currentPage = 'home' }: HRNavbarProps) => {
             <Link href={getHRPortalPath('dashboard')} className="flex-shrink-0">
               <Image
                 src="/logo.png"
-                alt="tielo logo"
+                alt="HR Dashboard logo"
                 width={316}
                 height={295}
                 className="h-12 w-auto"

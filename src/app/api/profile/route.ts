@@ -5,7 +5,7 @@ import connectDB from '../../../lib/mongodb';
 import UserProfile, { IUserProfileModel } from '../../../models/UserProfile';
 import { authenticateRequest, createUnauthorizedResponse, getUserRole, hasAnyRole } from '../../../lib/auth';
 import { TimezoneSyncService } from '../../../lib/timezoneSyncService';
-import { currentUser } from '@clerk/nextjs/server';
+import { currentUser } from '@/lib/devAuthWrapper';
 import mongoose from 'mongoose';
 
 // Create or update user profile

@@ -10,12 +10,12 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   
   if (!blog) {
     return {
-      title: 'Blog Not Found - Tielo',
+      title: 'Blog Not Found - HR Dashboard',
     };
   }
 
   return {
-    title: `${blog.title} - Tielo`,
+    title: `${blog.title} - HR Dashboard`,
     description: blog.subtitle,
   };
 }

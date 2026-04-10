@@ -1,4 +1,4 @@
-import mongoose, { Schema, Document } from 'mongoose';
+﻿import mongoose, { Schema, Document } from 'mongoose';
 
 export interface ISystemSettings extends Document {
   general: {
@@ -116,7 +116,7 @@ export interface ISystemSettings extends Document {
 
 const SystemSettingsSchema = new Schema<ISystemSettings>({
   general: {
-    companyName: { type: String, default: 'Tielo HR' },
+    companyName: { type: String, default: 'HR Dashboard' },
     companyLogo: { type: String, default: '/api/image/logo.png' },
     companyAddress: { type: String, default: '' },
     companyPhone: { type: String, default: '' },

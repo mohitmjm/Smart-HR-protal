@@ -27,7 +27,7 @@ const Navigation = () => {
             <Link href="/" className="flex-shrink-0">
               <Image
                 src="/logo.png"
-                alt="tielo logo"
+                alt="HR Dashboard logo"
                 width={316}
                 height={295}
                 className="h-12 w-auto"

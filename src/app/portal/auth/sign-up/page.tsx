@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 
 import { useEffect } from 'react'
 import { useRouter } from 'next/navigation'
@@ -8,7 +8,7 @@ export default function SignUpRedirectPage() {
 
   useEffect(() => {
     // Redirect to the main auth page
-    const isPortalSubdomain = window.location.hostname === 'portal.tielo.io'
+    const isPortalSubdomain = window.location.hostname === 'portal.inovatrix.io'
     const redirectPath = isPortalSubdomain ? '/auth' : '/hr/portal/auth'
     router.replace(redirectPath)
   }, [router])

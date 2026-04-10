@@ -369,7 +369,7 @@ const VoiceCommandChatSimple = ({
             </div>
           </div>
 
-          {/* Tielo Response (Right) */}
+          {/* HR Dashboard Response (Right) */}
           <div className="flex justify-end">
             <div className="flex items-start space-x-1 max-w-xs">
               <div className="voice-chat-message rounded-lg rounded-tr-sm px-3 py-2">
@@ -381,10 +381,10 @@ const VoiceCommandChatSimple = ({
                   <div className={`w-1.5 h-1.5 rounded-full ${message.success ? 'bg-green-400 shadow-lg shadow-green-400/50' : 'bg-red-400 shadow-lg shadow-red-400/50'}`}></div>
                 </div>
                 <div className="text-xs text-gray-800 font-medium drop-shadow-sm">{message.message}</div>
-                <div className="text-xs text-gray-600 mt-1 drop-shadow-sm">Tielo</div>
+                <div className="text-xs text-gray-600 mt-1 drop-shadow-sm">HR Dashboard</div>
               </div>
               <div className="w-5 h-5 rounded-full bg-gradient-to-br from-purple-400/30 to-pink-500/30 backdrop-blur-sm flex items-center justify-center text-white text-xs font-semibold border border-white/20 shadow-lg">
-                T
+                H
               </div>
             </div>
           </div>

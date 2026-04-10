@@ -32,7 +32,7 @@ interface HRPortalLayoutProps {
 
 const HRPortalLayout = ({ children, currentPage = 'home', showSidebar = true }: HRPortalLayoutProps) => {
   const [sidebarOpen, setSidebarOpen] = useState(false)
-  const [companyName, setCompanyName] = useState<string>('tielo')
+  const [companyName, setCompanyName] = useState<string>('HR Dashboard')
   const { user, isLoaded } = useDevSafeUser()
   const { signOut } = useDevSafeClerk()
   const router = useRouter()

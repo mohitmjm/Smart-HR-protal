@@ -10,10 +10,10 @@ export const dynamic = 'force-dynamic'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'tielo - Rooted Support for Startup Growth',
+  title: 'HR Dashboard',
   description: 'We\'re your flexible, AI-powered product and operations partner. From code to customers, we help you build fast, scale smart, and focus on what matters.',
   keywords: 'startup services, AI-powered development, flexible team scaling, MVP development, startup growth',
-  authors: [{ name: 'tielo' }],
+  authors: [{ name: 'HR Dashboard' }],
   metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000'),
   robots: {
     index: true,
@@ -30,16 +30,16 @@ export const metadata: Metadata = {
     icon: '/favicon.ico',
   },
   openGraph: {
-    title: 'tielo - Rooted Support for Startup Growth',
+    title: 'HR Dashboard',
     description: 'We\'re your flexible, AI-powered product and operations partner. From code to customers, we help you build fast, scale smart, and focus on what matters.',
     url: process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000',
-    siteName: 'tielo',
+    siteName: 'HR Dashboard',
     images: [
       {
         url: '/logo.png',
         width: 1200,
         height: 630,
-        alt: 'tielo - Rooted Support for Startup Growth',
+        alt: 'HR Dashboard',
       },
     ],
     locale: 'en_US',
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'tielo - Rooted Support for Startup Growth',
+    title: 'HR Dashboard',
     description: 'We\'re your flexible, AI-powered product and operations partner. From code to customers, we help you build fast, scale smart, and focus on what matters.',
     images: ['/logo.png'],
   },

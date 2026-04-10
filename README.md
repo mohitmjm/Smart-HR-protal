@@ -1,6 +1,6 @@
-# tielo Website
+﻿# HR Dashboard Website
 
-A modern, responsive Next.js website for tielo - a startup service provider offering AI-powered, flexible team scaling solutions.
+A modern, responsive Next.js website for HR Dashboard - a startup service provider offering AI-powered, flexible team scaling solutions.
 
 ## 🚀 Features
 
@@ -43,7 +43,7 @@ A modern, responsive Next.js website for tielo - a startup service provider offe
 1. Clone the repository:
 ```bash
 git clone <repository-url>
-cd tielo-website
+cd hr-dashboard
 ```
 
 2. Install dependencies:
@@ -208,9 +208,9 @@ This project is licensed under the MIT License.
 ## 🆘 Support
 
 For support or questions:
-- Email: hello@tielo.io
+- Email: hello@portal.inovatrix.io
 - Phone: +1 (555) 123-4567
-- Website: [tielo.com](https://tielo.com)
+- Website: [HR Dashboard.com](https://HR Dashboard.com)
 
 ## 🔄 Updates
 
@@ -222,4 +222,4 @@ The website is designed to be easily maintainable:
 
 ---
 
-Built with ❤️ by the tielo team
+Built with ❤️ by the HR Dashboard Team

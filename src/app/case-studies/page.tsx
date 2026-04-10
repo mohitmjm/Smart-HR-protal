@@ -1,4 +1,4 @@
-import Link from 'next/link'
+﻿import Link from 'next/link'
 import { 
   ChartBarIcon, 
   UsersIcon, 
@@ -81,31 +81,31 @@ export default function CaseStudies() {
     {
       aspect: 'Time to Market',
       traditional: '3-6 months',
-      tielo: '2-4 weeks',
+      HR Dashboard: '2-4 weeks',
       advantage: '5x faster'
     },
     {
       aspect: 'Cost',
       traditional: '$50K - $200K+',
-      tielo: '$15K - $50K',
+      HR Dashboard: '$15K - $50K',
       advantage: '60% savings'
     },
     {
       aspect: 'Flexibility',
       traditional: 'Long-term contracts',
-      tielo: 'Month-to-month',
+      HR Dashboard: 'Month-to-month',
       advantage: 'No commitment'
     },
     {
       aspect: 'Team Scaling',
       traditional: 'Hire and fire cycle',
-      tielo: 'Instant scaling',
+      HR Dashboard: 'Instant scaling',
       advantage: 'Immediate response'
     },
     {
       aspect: 'AI Integration',
       traditional: 'Manual processes',
-      tielo: 'AI-powered efficiency',
+      HR Dashboard: 'AI-powered efficiency',
       advantage: 'Better results'
     }
   ]
@@ -257,7 +257,7 @@ export default function CaseStudies() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-              tielo vs. Traditional Agencies
+              HR Dashboard vs. Traditional Agencies
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               See how our AI-powered, flexible approach compares to traditional agency models.
@@ -270,7 +270,7 @@ export default function CaseStudies() {
                 <tr className="border-b-2 border-gray-200">
                   <th className="text-left py-4 px-6 font-semibold text-gray-900">Aspect</th>
                   <th className="text-center py-4 px-6 font-semibold text-gray-900">Traditional Agencies</th>
-                  <th className="text-center py-4 px-6 font-semibold text-blue-600">tielo</th>
+                  <th className="text-center py-4 px-6 font-semibold text-blue-600">HR Dashboard</th>
                   <th className="text-center py-4 px-6 font-semibold text-green-600">Advantage</th>
                 </tr>
               </thead>
@@ -279,7 +279,7 @@ export default function CaseStudies() {
                   <tr key={row.aspect} className={`border-b border-gray-100 ${index % 2 === 0 ? 'bg-gray-50' : ''}`}>
                     <td className="py-4 px-6 font-medium text-gray-900">{row.aspect}</td>
                     <td className="py-4 px-6 text-center text-gray-600">{row.traditional}</td>
-                    <td className="py-4 px-6 text-center text-blue-600 font-medium">{row.tielo}</td>
+                    <td className="py-4 px-6 text-center text-blue-600 font-medium">{row.HR Dashboard}</td>
                     <td className="py-4 px-6 text-center text-green-600 font-semibold">{row.advantage}</td>
                   </tr>
                 ))}
@@ -289,12 +289,12 @@ export default function CaseStudies() {
         </div>
       </section>
 
-      {/* Why Choose tielo Section */}
+      {/* Why Choose HR Dashboard Section */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-              Why Startups Choose tielo
+              Why Startups Choose HR Dashboard
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Our unique approach addresses the specific challenges that early-stage companies face.

@@ -94,9 +94,9 @@ export async function PUT(
                           <p>Reason:</p>
                           <blockquote>${leave.reason?.toString().replace(/\n/g, '<br/>') || '-'}</blockquote>
                           <p style="margin-top: 20px;">
-                            <a href="https://portal.tielo.io/leaves" style="background-color: #28a745; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; display: inline-block;">View My Leaves</a>
+                            <a href="https://portal.inovatrix.io/leaves" style="background-color: #28a745; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; display: inline-block;">View My Leaves</a>
                           </p>
-                          <p>Have a great time.<br/>Tielo HR</p>`;
+                          <p>Have a great time.<br/>HR Dashboard</p>`;
             console.log('[Leaves:[leaveId] PUT] Sending approval email to employee', { to: userProfile.email });
             await emailService.sendEmail({
               to: userProfile.email,
@@ -136,9 +136,9 @@ export async function PUT(
                         <p><strong>Rejection Reason:</strong></p>
                         <blockquote>${(leave.rejectionReason || 'No reason provided').toString().replace(/\n/g, '<br/>')}</blockquote>
                         <p style="margin-top: 20px;">
-                          <a href="https://portal.tielo.io/leaves" style="background-color: #dc3545; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; display: inline-block;">View My Leaves</a>
+                          <a href="https://portal.inovatrix.io/leaves" style="background-color: #dc3545; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; display: inline-block;">View My Leaves</a>
                         </p>
-                        <p>Regards,<br/>Tielo HR</p>`;
+                        <p>Regards,<br/>HR Dashboard</p>`;
           console.log('[Leaves:[leaveId] PUT] Sending rejection email to employee', { to: userProfile?.email });
           await emailService.sendEmail({
             to: userProfile?.email || '',

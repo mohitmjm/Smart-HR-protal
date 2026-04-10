@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+﻿import { useState, useEffect } from 'react';
 
 interface SystemSettings {
   general: {
@@ -140,7 +140,7 @@ export function useSystemSettings() {
       // Set default settings if fetch fails
       setSettings({
         general: {
-          companyName: 'Tielo HR',
+          companyName: 'HR Dashboard',
           companyLogo: '/api/image/logo.png',
           companyAddress: '',
           companyPhone: '',

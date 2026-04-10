@@ -38,7 +38,7 @@ interface TimezoneProviderProps {
 
 export function TimezoneProvider({ children }: TimezoneProviderProps) {
   const { user, isLoaded } = useDevSafeUser()
-  const [timezone, setTimezoneState] = useState<string>('UTC')
+  const [timezone, setTimezoneState] = useState<string>('Asia/Kolkata')
   const [isClient, setIsClient] = useState(false)
   const [isLoading, setIsLoading] = useState(true)
   const [timezoneReady, setTimezoneReady] = useState(false)
@@ -49,7 +49,7 @@ export function TimezoneProvider({ children }: TimezoneProviderProps) {
   useEffect(() => {
     if (typeof window !== 'undefined') {
       const hostname = window.location.hostname
-      const isPortal = hostname === 'portal.tielo.io' || hostname.includes('portal.tielo')
+      const isPortal = hostname === 'portal.inovatrix.io' || hostname.includes('portal.inovatrix')
       setIsPortalSubdomain(isPortal)
     }
   }, [])
@@ -62,7 +62,7 @@ export function TimezoneProvider({ children }: TimezoneProviderProps) {
 
   // Fetch user timezone from API - Profile-first approach
   const fetchUserTimezone = useCallback(async () => {
-    if (!user || !isLoaded || !isPortalSubdomain) {
+    if (!user || !isLoaded) {
       return
     }
     
@@ -81,8 +81,8 @@ export function TimezoneProvider({ children }: TimezoneProviderProps) {
         if (userTimezone && TimezoneService.isValidTimezone(userTimezone)) {
           setTimezoneState(userTimezone)
         } else {
-          // No valid timezone in profile - use UTC as default
-          setTimezoneState('UTC')
+          // No valid timezone in profile - default to IST
+          setTimezoneState('Asia/Kolkata')
         }
       } else {
         throw new Error('Failed to fetch timezone')
@@ -90,8 +90,8 @@ export function TimezoneProvider({ children }: TimezoneProviderProps) {
     } catch (error) {
       logger.error('Error fetching user timezone', { error: error instanceof Error ? error.message : String(error) })
       setError(error instanceof Error ? error.message : 'Failed to fetch timezone')
-      // Fallback to UTC if there's an error
-      setTimezoneState('UTC')
+      // Fallback to IST if there's an error
+      setTimezoneState('Asia/Kolkata')
     } finally {
       setIsLoading(false)
       // Set timezoneReady to true only after the complete fetch/PUT flow finishes
@@ -101,16 +101,11 @@ export function TimezoneProvider({ children }: TimezoneProviderProps) {
 
   // Initialize timezone on mount and when user changes
   useEffect(() => {
-    if (isLoaded && isClient && isPortalSubdomain && user) {
-      // Only fetch timezone if user is authenticated
+    if (isLoaded && isClient && user) {
       fetchUserTimezone()
-    } else if (isLoaded && isClient && !isPortalSubdomain) {
-      // For non-portal subdomains, just set timezone ready without fetching
-      setTimezoneReady(true)
-      setIsLoading(false)
-    } else if (isLoaded && isClient && isPortalSubdomain && !user) {
-      // On portal subdomain but not authenticated - use UTC as default
-      setTimezoneState('UTC')
+    } else if (isLoaded && isClient && !user) {
+      // Not authenticated - use IST as default
+      setTimezoneState('Asia/Kolkata')
       setTimezoneReady(true)
       setIsLoading(false)
     }

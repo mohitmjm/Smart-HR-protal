@@ -1,4 +1,4 @@
-import Navigation from '@/components/Navigation'
+﻿import Navigation from '@/components/Navigation'
 import Footer from '@/components/Footer'
 import { getCareersJobModel } from '@/models/careers/Job'
 import Script from 'next/script'
@@ -53,7 +53,7 @@ function formatDisplayDate(date?: string): string | undefined {
 }
 
 function buildJobPostingJSONLD(job: Job) {
-  const baseUrl = 'https://portal.tielo.io/jobs'
+  const baseUrl = 'https://portal.inovatrix.io/jobs'
   const url = `${baseUrl}#${job._id}`
   const employmentTypeMap: Record<Job['type'], string> = {
     'full-time': 'FULL_TIME',
@@ -72,8 +72,8 @@ function buildJobPostingJSONLD(job: Job) {
     employmentType: employmentTypeMap[job.type],
     hiringOrganization: {
       '@type': 'Organization',
-      name: job.company || 'Tielo',
-      sameAs: 'https://tielo.io',
+      name: job.company || 'HR Dashboard',
+      sameAs: 'https://portal.inovatrix.io',
     },
     jobLocation: {
       '@type': 'Place',
@@ -95,7 +95,7 @@ function buildJobPostingJSONLD(job: Job) {
     },
     identifier: {
       '@type': 'PropertyValue',
-      name: job.company || 'Tielo',
+      name: job.company || 'HR Dashboard',
       value: job._id,
     },
     url,

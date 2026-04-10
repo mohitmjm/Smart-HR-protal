@@ -1,4 +1,4 @@
-import Link from 'next/link'
+﻿import Link from 'next/link'
 import Image from 'next/image'
 import { EnvelopeIcon, MapPinIcon, LinkIcon } from '@heroicons/react/24/outline'
 
@@ -43,7 +43,7 @@ const Footer = () => {
   ]
 
   const socialLinks = [
-    { name: 'LinkedIn', href: 'https://www.linkedin.com/company/tielo-ai/', icon: LinkIcon }
+    { name: 'LinkedIn', href: 'https://www.linkedin.com/company/inovatrix/', icon: LinkIcon }
   ]
 
   return (
@@ -55,7 +55,7 @@ const Footer = () => {
             <div className="mb-6">
               <Image
                 src="/logo.png"
-                alt="tielo logo"
+                alt="HR Dashboard logo"
                 width={316}
                 height={295}
                 className="h-12 w-auto"
@@ -70,7 +70,7 @@ const Footer = () => {
 
               <div className="flex items-center space-x-3">
                 <EnvelopeIcon className="h-5 w-5 text-blue-400" />
-                <span className="text-gray-300">hello@tielo.io</span>
+                <span className="text-gray-300">hello@inovatrix.io</span>
               </div>
               <div className="flex items-center space-x-3">
                 <MapPinIcon className="h-5 w-5 text-blue-400" />
@@ -103,7 +103,7 @@ const Footer = () => {
         <div className="border-t border-gray-800 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="text-gray-400 text-sm mb-4 md:mb-0">
-              © 2024 tielo. All rights reserved.
+              © 2024 HR Dashboard. All rights reserved.
             </div>
             
             {/* Social Links */}

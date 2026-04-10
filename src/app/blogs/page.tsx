@@ -4,7 +4,7 @@ import { getBlogPosts } from '@/lib/blogUtils';
 import BlogFilters from '@/components/BlogFilters';
 
 export const metadata: Metadata = {
-  title: 'Blogs - Tielo',
+  title: 'Blogs - HR Dashboard',
   description: 'Insights, guides, and thoughts on technology, business, and development',
 };
 

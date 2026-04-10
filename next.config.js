@@ -39,7 +39,7 @@ const nextConfig = {
           {
             key: 'Access-Control-Allow-Origin',
             value: process.env.NODE_ENV === 'production'
-              ? 'https://portal.tielo.io, https://tielo.io, https://*.vercel.app, https://*.vercel.dev'
+              ? 'https://portal.inovatrix.io, https://portal.inovatrix.io, https://*.vercel.app, https://*.vercel.dev'
               : '*',
           },
           {
@@ -78,7 +78,7 @@ const nextConfig = {
           },
           {
             key: 'Permissions-Policy',
-            value: 'camera=(), microphone=(self "https://portal.tielo.io" "https://tielo.io"), geolocation=(self "https://portal.tielo.io" "https://tielo.io")',
+            value: 'camera=(), microphone=(self "https://portal.inovatrix.io" "https://portal.inovatrix.io"), geolocation=(self "https://portal.inovatrix.io" "https://portal.inovatrix.io")',
           },
         ],
       },
@@ -171,8 +171,13 @@ const nextConfig = {
   },
 
   // Turbopack configuration - Next.js 16 uses Turbopack by default
-  // Adding empty config to allow webpack config to work during migration
-  turbopack: {},
+  turbopack: {
+    root: __dirname,
+  },
+
+  // Exclude mongodb-memory-server from server external packages to fix version conflict
+  serverExternalPackages: ['mongoose', 'mongodb'],
+
 
   // Webpack configuration for better performance
   webpack: (config, { dev, isServer }) => {
@@ -225,77 +230,77 @@ const nextConfig = {
     return config;
   },
 
-  // Subdomain routing support for portal.tielo.io
+  // Subdomain routing support for portal.inovatrix.io
   async rewrites() {
     return [
       // Portal subdomain root
       {
         source: '/',
         destination: '/portal',
-        has: [{ type: 'host', value: 'portal\.tielo\.io' }],
+        has: [{ type: 'host', value: 'portal\.inovatrix\.io' }],
       },
       // Portal subdomain routes
       {
         source: '/auth/:path*',
         destination: '/portal/auth/:path*',
-        has: [{ type: 'host', value: 'portal\.tielo\.io' }],
+        has: [{ type: 'host', value: 'portal\.inovatrix\.io' }],
       },
       {
         source: '/dashboard/:path*',
         destination: '/portal/dashboard/:path*',
-        has: [{ type: 'host', value: 'portal\.tielo\.io' }],
+        has: [{ type: 'host', value: 'portal\.inovatrix\.io' }],
       },
       {
         source: '/attendance/:path*',
         destination: '/portal/attendance/:path*',
-        has: [{ type: 'host', value: 'portal\.tielo\.io' }],
+        has: [{ type: 'host', value: 'portal\.inovatrix\.io' }],
       },
       {
         source: '/settings/:path*',
         destination: '/portal/settings/:path*',
-        has: [{ type: 'host', value: 'portal\.tielo\.io' }],
+        has: [{ type: 'host', value: 'portal\.inovatrix\.io' }],
       },
       {
         source: '/admin/:path*',
         destination: '/portal/admin/:path*',
-        has: [{ type: 'host', value: 'portal\.tielo\.io' }],
+        has: [{ type: 'host', value: 'portal\.inovatrix\.io' }],
       },
       {
         source: '/leaves/:path*',
         destination: '/portal/leaves/:path*',
-        has: [{ type: 'host', value: 'portal\.tielo\.io' }],
+        has: [{ type: 'host', value: 'portal\.inovatrix\.io' }],
       },
       {
         source: '/documents/:path*',
         destination: '/portal/documents/:path*',
-        has: [{ type: 'host', value: 'portal\.tielo\.io' }],
+        has: [{ type: 'host', value: 'portal\.inovatrix\.io' }],
       },
       {
         source: '/profile/:path*',
         destination: '/portal/profile/:path*',
-        has: [{ type: 'host', value: 'portal\.tielo\.io' }],
+        has: [{ type: 'host', value: 'portal\.inovatrix\.io' }],
       },
       {
         source: '/team/:path*',
         destination: '/portal/team/:path*',
-        has: [{ type: 'host', value: 'portal\.tielo\.io' }],
+        has: [{ type: 'host', value: 'portal\.inovatrix\.io' }],
       },
       {
         source: '/notifications/:path*',
         destination: '/portal/notifications/:path*',
-        has: [{ type: 'host', value: 'portal\.tielo\.io' }],
+        has: [{ type: 'host', value: 'portal\.inovatrix\.io' }],
       },
-      // API routes should NOT be rewritten (they should stay as /api/*)
+      // API routes should NOT be rewritten
       {
         source: '/api/:path*',
         destination: '/api/:path*',
-        has: [{ type: 'host', value: 'portal\.tielo\.io' }],
+        has: [{ type: 'host', value: 'portal\.inovatrix\.io' }],
       },
-      // Catch-all for other portal routes (excluding API routes)
+      // Catch-all for other portal routes
       {
         source: '/:path*',
         destination: '/portal/:path*',
-        has: [{ type: 'host', value: 'portal\.tielo\.io' }],
+        has: [{ type: 'host', value: 'portal\.inovatrix\.io' }],
       },
     ];
   },

@@ -26,19 +26,31 @@ export interface IntentContinuityResult {
 
 export class OpenAIService {
   private openai: OpenAI;
+  private isMockMode: boolean = false;
   
   constructor() {
     if (!process.env.OPENAI_API_KEY) {
-      throw new Error('OPENAI_API_KEY environment variable is required');
+      console.warn('OPENAI_API_KEY is missing. Operating in Mock Mode.');
+      this.isMockMode = true;
+      this.openai = new OpenAI({ apiKey: 'dummy', dangerouslyAllowBrowser: true });
+    } else {
+      this.openai = new OpenAI({
+        apiKey: process.env.OPENAI_API_KEY,
+        organization: process.env.OPENAI_ORGANIZATION,
+      });
     }
-    
-    this.openai = new OpenAI({
-      apiKey: process.env.OPENAI_API_KEY,
-      organization: process.env.OPENAI_ORGANIZATION,
-    });
   }
   
   async transcribeAudio(audioBlob: Blob): Promise<WhisperTranscriptionResult> {
+    if (this.isMockMode) {
+      await new Promise(r => setTimeout(r, 1000));
+      return {
+        text: "I want to apply for 3 days of annual leave starting next Monday",
+        language: 'en',
+        confidence: 0.99
+      };
+    }
+
     try {
       // Convert Blob to File for OpenAI API
       const audioFile = new File([audioBlob], 'voice-command.webm', { type: 'audio/webm' });
@@ -135,6 +147,18 @@ Output: {"isRelevant": true, "intent": "apply_leave", "confidence": 0.97, "param
 Input: "Show my attendance for this month"
 Output: {"isRelevant": true, "intent": "view_attendance_history", "confidence": 0.95, "parameters": {"dateRange": "this month"}, "original_text": "Show my attendance for this month"}
 `;
+
+    if (this.isMockMode) {
+      await new Promise(r => setTimeout(r, 500));
+      return {
+        isRelevant: true,
+        intent: "apply_leave",
+        confidence: 0.97,
+        parameters: { startDate: "next Monday", endDate: "next Wednesday", leaveType: "annual" },
+        original_text: transcribedText,
+        user_id: userContext?.userId
+      };
+    }
 
     try {
       const completion = await this.openai.chat.completions.create({
@@ -438,6 +462,15 @@ Return JSON:
 }
 `;
 
+    if (this.isMockMode) {
+      return {
+        isRelevant: true,
+        confidence: 0.95,
+        response: undefined,
+        reasoning: "Mock mode assumes relevance"
+      };
+    }
+
     try {
       const completion = await this.openai.chat.completions.create({
         model: "gpt-5-mini",
@@ -524,6 +557,13 @@ Current: "Apply sick leave for me" (previous collected: startDate, endDate) → 
 Current: "for tomorrow" → {"isSame": true, "newData": {"startDate": "tomorrow", "endDate": "tomorrow"}}
 Current: "clock me in" (different intent) → {"isSame": false, "newData": {}}
 `;
+
+    if (this.isMockMode) {
+      return {
+        isSame: true,
+        newData: {}
+      };
+    }
 
     try {
       const completion = await this.openai.chat.completions.create({

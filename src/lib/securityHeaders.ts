@@ -1,4 +1,4 @@
-import { NextResponse } from 'next/server';
+﻿import { NextResponse } from 'next/server';
 
 export function addSecurityHeaders(response: NextResponse): NextResponse {
   // Prevent clickjacking
@@ -16,14 +16,14 @@ export function addSecurityHeaders(response: NextResponse): NextResponse {
   // Content Security Policy for admin routes
   response.headers.set(
     'Content-Security-Policy',
-    "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://clerk.tielo.io; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' https://api.clerk.dev; frame-src 'self' https://clerk.tielo.io;"
+    "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://clerk.inovatrix.io; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' https://api.clerk.dev; frame-src 'self' https://clerk.inovatrix.io;"
   );
   
   // Referrer Policy
   response.headers.set('Referrer-Policy', 'strict-origin-when-cross-origin');
   
   // Permissions Policy
-  response.headers.set('Permissions-Policy', 'camera=(), microphone=(self "https://portal.tielo.io" "https://tielo.io"), geolocation=(self "https://portal.tielo.io" "https://tielo.io")');
+  response.headers.set('Permissions-Policy', 'camera=(), microphone=(self "https://portal.inovatrix.io" "https://portal.inovatrix.io"), geolocation=(self "https://portal.inovatrix.io" "https://portal.inovatrix.io")');
   
   return response;
 }

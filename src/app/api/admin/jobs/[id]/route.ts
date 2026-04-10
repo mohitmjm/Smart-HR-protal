@@ -44,10 +44,10 @@ export async function PUT(req: NextRequest, { params }: { params: Promise<{ id: 
     if (!companyName) {
       try {
         const companyInfo = await SettingsService.getCompanyInfo()
-        companyName = companyInfo.name || 'Tielo'
+        companyName = companyInfo.name || 'HR Dashboard'
       } catch (err) {
         console.error('Failed to fetch company name from settings:', err)
-        companyName = 'Tielo'
+        companyName = 'HR Dashboard'
       }
     }
 

@@ -13,9 +13,9 @@ export const DEV_BYPASS_ENABLED =
 
 export const DEV_USER = {
   userId: 'dev_user_admin_001',
-  email: 'admin@tielo.dev',
-  firstName: 'Dev',
-  lastName: 'Admin',
+  email: 'mohit@inovatrix.io',
+  firstName: 'Mohit',
+  lastName: 'Mohatkar',
   role: 'HR Manager',
   permissions: ['*'], // All permissions in dev
 };

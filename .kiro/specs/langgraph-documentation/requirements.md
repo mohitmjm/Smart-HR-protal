@@ -1,14 +1,14 @@
-# Requirements Document
+﻿# Requirements Document
 
 ## Introduction
 
-This document outlines the requirements for creating comprehensive documentation for the LangGraph agent system in the Tielo HR website. The LangGraph agent is a sophisticated voice command processing system that handles HR-related tasks through a declarative workflow engine with multiple nodes, conditions, and action executors.
+This document outlines the requirements for creating comprehensive documentation for the LangGraph agent system in the HR Dashboard website. The LangGraph agent is a sophisticated voice command processing system that handles HR-related tasks through a declarative workflow engine with multiple nodes, conditions, and action executors.
 
 ## Requirements
 
 ### Requirement 1
 
-**User Story:** As a developer working on the Tielo HR system, I want comprehensive documentation of the LangGraph agent architecture, so that I can understand how voice commands are processed and maintain the system effectively.
+**User Story:** As a developer working on the HR Dashboard system, I want comprehensive documentation of the LangGraph agent architecture, so that I can understand how voice commands are processed and maintain the system effectively.
 
 #### Acceptance Criteria
 

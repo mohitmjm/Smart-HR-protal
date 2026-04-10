@@ -1,8 +1,8 @@
-# LangGraph Agent Documentation Design
+﻿# LangGraph Agent Documentation Design
 
 ## Overview
 
-The LangGraph agent documentation will be a comprehensive technical guide that explains the voice command processing system in the Tielo HR application. The documentation will be structured as a single, detailed markdown file that covers the complete architecture, node system, workflow engine, and action execution layer.
+The LangGraph agent documentation will be a comprehensive technical guide that explains the voice command processing system in the HR Dashboard application. The documentation will be structured as a single, detailed markdown file that covers the complete architecture, node system, workflow engine, and action execution layer.
 
 Based on the code analysis, the LangGraph system is a sophisticated declarative workflow engine that processes voice commands through a series of interconnected nodes, each with specific responsibilities and activation conditions.
 

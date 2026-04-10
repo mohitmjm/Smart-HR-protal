@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Migration script to populate MongoDB with current settings
  * This script will create default system settings and migrate any existing settings
  */
@@ -29,7 +29,7 @@ async function migrateSettingsToDatabase() {
       {}, // Find any document (since we ensure uniqueness)
       {
         general: {
-          companyName: 'Tielo HR',
+          companyName: 'HR Dashboard',
           companyLogo: '',
           companyAddress: '',
           companyPhone: '',

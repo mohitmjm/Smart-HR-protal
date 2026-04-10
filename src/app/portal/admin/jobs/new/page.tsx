@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
@@ -108,7 +108,7 @@ export default function NewJobPage() {
         benefits: form.benefits,
         salary: { min: Number(form.salaryMin || 0), max: Number(form.salaryMax || 0), currency: form.currency || 'INR' },
         tags: form.tags,
-        company: companyName || 'Tielo',
+        company: companyName || 'HR Dashboard',
         contactEmail: form.contactEmail,
         postedDate: form.postedDate ? new Date(form.postedDate).toISOString() : undefined,
         deadline: form.deadline ? new Date(form.deadline).toISOString() : undefined,

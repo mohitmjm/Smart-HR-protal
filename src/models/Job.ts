@@ -1,4 +1,4 @@
-import mongoose, { Schema, Document } from 'mongoose';
+﻿import mongoose, { Schema, Document } from 'mongoose';
 
 export interface IJob extends Document {
   title: string;
@@ -99,7 +99,7 @@ const JobSchema: Schema = new Schema({
   company: {
     type: String,
     required: true,
-    default: 'Tielo'
+    default: 'HR Dashboard'
   },
   contactEmail: {
     type: String,

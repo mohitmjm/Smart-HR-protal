@@ -69,8 +69,12 @@ async function main() {
 
     // Create applications for last 3 months
     const now = new Date();
-    const threeMonthsAgo = new Date();
-    threeMonthsAgo.setMonth(now.getMonth() - 3);
+    const minDate = new Date('2026-03-02').getTime();
+    let pastDate = new Date();
+    pastDate.setMonth(now.getMonth() - 2);
+    if (pastDate.getTime() < minDate) {
+      pastDate = new Date(minDate);
+    }
 
     for (let i = 0; i < 25; i++) {
       const firstName = firstNames[Math.floor(Math.random() * firstNames.length)];
@@ -78,9 +82,9 @@ async function main() {
       const job = existingJobs[Math.floor(Math.random() * existingJobs.length)];
       const status = statuses[Math.floor(Math.random() * statuses.length)];
       
-      // Random date within last 3 months
-      const randomTime = threeMonthsAgo.getTime() + 
-        Math.random() * (now.getTime() - threeMonthsAgo.getTime());
+      // Random date within the valid threshold
+      const randomTime = pastDate.getTime() + 
+        Math.random() * (now.getTime() - pastDate.getTime());
       const appliedDate = new Date(randomTime);
 
       // Generate education (1-3 entries)

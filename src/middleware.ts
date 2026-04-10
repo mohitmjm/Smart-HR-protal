@@ -1,10 +1,10 @@
-import { clerkMiddleware, createRouteMatcher } from '@clerk/nextjs/server'
+﻿import { clerkMiddleware, createRouteMatcher } from '@clerk/nextjs/server'
 import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
 
 // Helper function to determine auth URL based on host
 function getAuthUrl(host: string): string {
-  const isPortalSubdomain = host === 'portal.tielo.io' || host.includes('portal.tielo')
+  const isPortalSubdomain = host === 'portal.inovatrix.io' || host.includes('portal.inovatrix')
   return isPortalSubdomain ? '/auth' : '/portal/auth'
 }
 
@@ -21,7 +21,7 @@ const isProtectedRoute = createRouteMatcher([
   '/portal/team(.*)',
   '/portal/user(.*)',
   '/portal/notifications(.*)',
-  // Subdomain protected routes (when accessed via portal.tielo.io)
+  // Subdomain protected routes (when accessed via portal.inovatrix.io)
   '/dashboard(.*)',
   '/attendance(.*)',
   '/leaves(.*)',
@@ -53,7 +53,7 @@ const isPublicRoute = createRouteMatcher([
   '/hr', // HR landing page
   '/api/health', // Health check API
   '/api/webhooks(.*)', // Webhook APIs
-  // Subdomain public routes (when accessed via portal.tielo.io)
+  // Subdomain public routes (when accessed via portal.inovatrix.io)
   '/auth(.*)', // Auth routes for subdomain
   // Portal root on subdomain should be public (it handles redirects)
   '/portal$', // This will match subdomain root only
