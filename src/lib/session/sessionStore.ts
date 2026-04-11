@@ -5,11 +5,11 @@ import type { SessionData, SessionId, SessionStore } from "../langGraph/types/se
 const UPSTASH_REDIS_REST_URL = process.env.UPSTASH_REDIS_REST_URL;
 const UPSTASH_REDIS_REST_TOKEN = process.env.UPSTASH_REDIS_REST_TOKEN;
 
-if (!UPSTASH_REDIS_REST_URL || !UPSTASH_REDIS_REST_TOKEN) {
-  throw new Error("Upstash Redis credentials not configured");
-}
-
 async function redisRequest(command: string, args: string[] = []): Promise<any> {
+  if (!UPSTASH_REDIS_REST_URL || !UPSTASH_REDIS_REST_TOKEN) {
+    throw new Error("Upstash Redis credentials not configured");
+  }
+
   const response = await fetch(`${UPSTASH_REDIS_REST_URL}/${command}/${args.join("/")}`, {
     headers: {
       Authorization: `Bearer ${UPSTASH_REDIS_REST_TOKEN}`,

@@ -19,50 +19,22 @@ declare global {
 
 // Enhanced environment validation with detailed logging
 if (!MONGODB_URI) {
-  console.error('❌ MONGODB_URI environment variable is not set');
-  console.error('Environment check:', {
-    NODE_ENV: process.env.NODE_ENV,
-    MONGODB_URI_EXISTS: !!process.env.MONGODB_URI,
-    MONGODB_URI_LENGTH: process.env.MONGODB_URI?.length || 0,
-    VERCEL_ENV: process.env.VERCEL_ENV,
-    VERCEL_URL: process.env.VERCEL_URL,
-    HOST: process.env.HOST
-  });
-  
-  // In production, we need to fail fast
-  if (process.env.NODE_ENV === 'production') {
-    throw new Error('MONGODB_URI environment variable is required in production');
+  console.warn('⚠️ MONGODB_URI environment variable is not set');
+} else {
+  const isValidMongoUri = MONGODB_URI.startsWith('mongodb://') || MONGODB_URI.startsWith('mongodb+srv://');
+  if (!isValidMongoUri) {
+    console.warn('⚠️ Invalid MongoDB URI format');
   }
-  
-  // In development, provide helpful error
-  throw new Error('Please define the MONGODB_URI environment variable. Check your .env.local file.');
-}
 
-// Validate MongoDB URI format
-const isValidMongoUri = MONGODB_URI.startsWith('mongodb://') || MONGODB_URI.startsWith('mongodb+srv://');
-if (!isValidMongoUri) {
-  console.error('❌ Invalid MongoDB URI format:', {
-    uri: MONGODB_URI.substring(0, 50) + '...',
-    startsWithMongo: MONGODB_URI.startsWith('mongodb'),
-    startsWithMongoSrv: MONGODB_URI.startsWith('mongodb+srv'),
-    environment: process.env.NODE_ENV
-  });
-  throw new Error('Invalid MongoDB URI format. Must start with mongodb:// or mongodb+srv://');
-}
-
-// Check for localhost in production
-if (process.env.NODE_ENV === 'production' && (MONGODB_URI.includes('localhost') || MONGODB_URI.includes('127.0.0.1'))) {
-  console.warn('⚠️  WARNING: Using localhost MongoDB URI in production environment!');
-  console.warn('This will likely cause connection failures on Vercel.');
+  if (process.env.NODE_ENV === 'production' && (MONGODB_URI.includes('localhost') || MONGODB_URI.includes('127.0.0.1'))) {
+    console.warn('⚠️ WARNING: Using localhost MongoDB URI in production environment!');
+  }
 }
 
 console.log('🔍 MongoDB Configuration:', {
   hasUri: !!MONGODB_URI,
-  uriPrefix: MONGODB_URI.substring(0, 20) + '...',
   dbName: DB_NAME,
   environment: process.env.NODE_ENV,
-  vercelEnv: process.env.VERCEL_ENV,
-  isLocalhost: MONGODB_URI.includes('localhost') || MONGODB_URI.includes('127.0.0.1')
 });
 
 // Extend the global type to include mongoose and additional cached connections
