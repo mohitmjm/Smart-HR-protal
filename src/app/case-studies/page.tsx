@@ -1,4 +1,4 @@
-﻿import Link from 'next/link'
+import Link from 'next/link'
 import { 
   ChartBarIcon, 
   UsersIcon, 
@@ -81,31 +81,31 @@ export default function CaseStudies() {
     {
       aspect: 'Time to Market',
       traditional: '3-6 months',
-      HR Dashboard: '2-4 weeks',
+      'HR Dashboard': '2-4 weeks',
       advantage: '5x faster'
     },
     {
       aspect: 'Cost',
       traditional: '$50K - $200K+',
-      HR Dashboard: '$15K - $50K',
+      'HR Dashboard': '$15K - $50K',
       advantage: '60% savings'
     },
     {
       aspect: 'Flexibility',
       traditional: 'Long-term contracts',
-      HR Dashboard: 'Month-to-month',
+      'HR Dashboard': 'Month-to-month',
       advantage: 'No commitment'
     },
     {
       aspect: 'Team Scaling',
       traditional: 'Hire and fire cycle',
-      HR Dashboard: 'Instant scaling',
+      'HR Dashboard': 'Instant scaling',
       advantage: 'Immediate response'
     },
     {
       aspect: 'AI Integration',
       traditional: 'Manual processes',
-      HR Dashboard: 'AI-powered efficiency',
+      'HR Dashboard': 'AI-powered efficiency',
       advantage: 'Better results'
     }
   ]
@@ -279,7 +279,7 @@ export default function CaseStudies() {
                   <tr key={row.aspect} className={`border-b border-gray-100 ${index % 2 === 0 ? 'bg-gray-50' : ''}`}>
                     <td className="py-4 px-6 font-medium text-gray-900">{row.aspect}</td>
                     <td className="py-4 px-6 text-center text-gray-600">{row.traditional}</td>
-                    <td className="py-4 px-6 text-center text-blue-600 font-medium">{row.HR Dashboard}</td>
+                    <td className="py-4 px-6 text-center text-blue-600 font-medium">{row['HR Dashboard']}</td>
                     <td className="py-4 px-6 text-center text-green-600 font-semibold">{row.advantage}</td>
                   </tr>
                 ))}

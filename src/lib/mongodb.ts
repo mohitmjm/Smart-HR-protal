@@ -140,7 +140,7 @@ async function connectDB() {
     // Seed local memory DB if it's empty
     if (process.env.USE_LOCAL_MEM_DB === 'true') {
       try {
-        const count = await typedCached.conn.connection.db.collection('userprofiles').countDocuments();
+        const count = await typedCached.conn.connection.db?.collection('userprofiles').countDocuments() || 0;
         if (count === 0) {
           console.log('🌱 Empty Memory DB Detected! Synthesizing HR mock data...');
           const { seedDatabase } = await import('@/scripts/seedDatabase');

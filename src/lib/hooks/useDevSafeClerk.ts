@@ -105,3 +105,23 @@ export function useDevSafeClerk() {
     openUserProfile: () => {},
   }
 }
+
+import React from 'react'
+export function SignOutButton({ children, ...props }: any) {
+  if (!DEV_BYPASS_ENABLED) {
+    const { SignOutButton: ClerkSignOutButton } = getClerkHooks();
+    return React.createElement(ClerkSignOutButton, props, children);
+  }
+
+  return React.createElement(
+    'div',
+    {
+      onClick: () => {
+        localStorage.removeItem('dev_auth_user');
+        window.location.href = '/portal/auth';
+      },
+      ...props
+    },
+    children
+  );
+}
