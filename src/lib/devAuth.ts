@@ -1,14 +1,12 @@
 /**
- * Development Authentication Bypass
+ * Authentication Bypass
  *
- * When NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY is not set,
- * this module provides a mock authenticated admin user for local development.
- *
- * THIS IS NEVER USED IN PRODUCTION.
+ * When NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY is not set (dev OR production),
+ * this module provides a mock authenticated admin user so the app works
+ * without a real Clerk account configured.
  */
 
 export const DEV_BYPASS_ENABLED =
-  process.env.NODE_ENV === 'development' &&
   !process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY;
 
 export const DEV_USER = {
