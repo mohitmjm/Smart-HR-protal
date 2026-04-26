@@ -5,8 +5,6 @@
  * It handles caching, uploading, and serving images with a consistent API.
  */
 
-import { getCachedImage, getCacheStats, clearCache, preloadImages, removeFromCache } from '../imageCache'
-
 export interface ImageUploadResult {
   success: boolean
   imageUrl?: string
@@ -120,7 +118,11 @@ class ImageService {
    */
   async preloadImages(filenames: string[]): Promise<void> {
     try {
-      await preloadImages(filenames)
+      await Promise.all(
+        filenames.map(filename => 
+          fetch(this.getImageUrl(filename)).catch(e => console.error(`Failed to preload ${filename}`, e))
+        )
+      )
     } catch (error) {
       console.error('Error preloading images:', error)
     }
