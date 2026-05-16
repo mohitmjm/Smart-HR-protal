@@ -117,7 +117,7 @@ export const env = {
   MONGODB_URI: process.env.MONGODB_URI,
   MONGODB_DB_NAME: process.env.MONGODB_DB_NAME || 'hr',
   CLERK_SECRET_KEY: process.env.CLERK_SECRET_KEY,
-  CLERK_PUBLISHABLE_KEY: process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY || process.env.CLERK_PUBLISHABLE_KEY,
+  CLERK_PUBLISHABLE_KEY: process.env.CLERK_PUBLISHABLE_KEY,
   AWS_ACCESS_KEY_ID: process.env.AWS_ACCESS_KEY_ID,
   AWS_SECRET_ACCESS_KEY: process.env.AWS_SECRET_ACCESS_KEY,
   AWS_REGION: process.env.AWS_S3_REGION || process.env.AWS_REGION || 'ap-south-1',
@@ -128,7 +128,7 @@ export const env = {
 export function validateEnvironment(): void {
   const requiredVars = ['MONGODB_URI', 'CLERK_SECRET_KEY', 'CLERK_PUBLISHABLE_KEY'];
   const missing = requiredVars.filter(varName => !env[varName as keyof typeof env]);
-  
+
   if (missing.length > 0) {
     console.error('❌ Missing required environment variables:', missing);
     console.error('Environment check:', {
@@ -137,7 +137,7 @@ export function validateEnvironment(): void {
       CLERK_SECRET_KEY_EXISTS: !!env.CLERK_SECRET_KEY,
       CLERK_PUBLISHABLE_KEY_EXISTS: !!env.CLERK_PUBLISHABLE_KEY,
     });
-    
+
     if (env.NODE_ENV === 'production') {
       throw new Error(`Missing required environment variables: ${missing.join(', ')}`);
     }
